@@ -70,15 +70,28 @@
 
 ![image-20220802123100345](readme.assets/image-20220802123100345.png)
 
+#### Tf-idf文本特征提取
 
+![image-20220802160142797](readme.assets/image-20220802160142797.png)
 
+ 这是一个分数特征，tfi-idf越大，这个词语的重要性越高。
 
+![image-20220802220000417](readme.assets/image-20220802220000417.png)
 
+## 决策树算法api
 
+![image-20220802220135711](readme.assets/image-20220802220135711.png)
 
+保存树结构dot文件
 
+![image-20220802235526569](readme.assets/image-20220802235526569.png)
 
+![1](readme.assets/1.png)
 
+## 总结
 
+![image-20220803001407897](readme.assets/image-20220803001407897.png)
 
+剪枝cart算法，可以直接在api里设置。
 
+![image-20220803004058748](readme.assets/image-20220803004058748.png)
