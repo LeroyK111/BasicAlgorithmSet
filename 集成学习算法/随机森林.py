@@ -23,13 +23,13 @@ transfer = DictVectorizer()
 x_train = transfer.fit_transform(x_train.to_dict(orient="records"))
 x_test = transfer.fit_transform(x_test.to_dict(orient="records"))
 
-# 换随机森林模型(先不传参数)
+# 换随机决策树分类器模型(先不传参数)
 estimator = RandomForestClassifier()
 param_grid = {
     "n_estimators": [120, 200, 300, 500, 800, 1200],
     "max_depth": [5, 8, 15, 25, 30]
 }
-# 交叉验证网格验证
+# 交叉验证网格验证,求取一个最好的预测模型
 estimator = GridSearchCV(estimator, param_grid=param_grid, cv=5)
 estimator.fit(x_train, y_train)
 
