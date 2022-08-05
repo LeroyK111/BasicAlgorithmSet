@@ -7,6 +7,6 @@ The document language is Chinese.
 
 😘希望能帮到大家，欢迎大家多多支持。
 
-有道云笔记分享思维导图
+THE TREE
 
-https://note.youdao.com/s/DWzre1ZT
+![机器学习](README.assets/机器学习.svg)
