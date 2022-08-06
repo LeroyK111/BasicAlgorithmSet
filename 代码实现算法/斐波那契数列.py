@@ -4,8 +4,6 @@
 
 # 前多少项斐波那契数列
 
-import sys
-
 
 def fib_count(n) -> list:
     if n == 0:
@@ -28,22 +26,13 @@ def fib_count(n) -> list:
             count += 1
 
 
-# 前三十个斐波那契数列，求和
-def fib(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fib(n - 1) + fib(n - 2)
-
-
 if __name__ == '__main__':
-    # number = fib(30)
-    # print(number)
     try:
-        fib_list = fib_count(int(sys.argv[1:2][0]))
+        fib_list = fib_count(10)
     except Exception as f:
         print(f)
     else:
+        # 数列
         print(fib_list)
+        # 数列和
+        print(sum(fib_list))
