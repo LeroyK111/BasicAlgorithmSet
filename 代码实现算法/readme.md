@@ -28,6 +28,6 @@
 
 2.添加两数 addTwoNum
 
-3.最长不重复子串的长度 sonShort
+3.最长不重复字符子串的长度 sonShort
 
 
