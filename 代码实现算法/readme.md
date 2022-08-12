@@ -41,3 +41,4 @@
 
 6.字符串格式化，让字符串按指定行数展开 ZigzagConversion
 
+7.反转数字 ReverseInteger
