@@ -42,3 +42,9 @@
 6.字符串格式化，让字符串按指定行数展开 ZigzagConversion
 
 7.反转数字 ReverseInteger
+
+8.字符串转整数 StringtoInteger
+
+9.倒序数字和正序数字一样大 PalindromeNumber
+
+10.
