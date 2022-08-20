@@ -63,6 +63,10 @@
 
 17.电话号码的字母组合 LetterCombinationsofaPhoneNumber
 
-18.
+18.四个元素相加等于 4Sum
 
-19.
+19.删除指定节点 RemoveNthNodeFromEndofList
+
+20.有效括号 ValidParentheses
+
+21.
