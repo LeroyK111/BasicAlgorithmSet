@@ -71,4 +71,6 @@
 
 21.合并列表 MergeTwoSortedLists
 
-22.
+22.给的括号数量，生成全部的括号种类 GenerateParentheses
+
+23.
