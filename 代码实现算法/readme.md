@@ -73,4 +73,6 @@
 
 22.给的括号数量，生成全部的括号种类 GenerateParentheses
 
-23.
+23.合并K全部列表并排序 MergekSortedLists
+
+24.
