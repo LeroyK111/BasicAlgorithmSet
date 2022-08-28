@@ -75,4 +75,8 @@
 
 23.合并K全部列表并排序 MergekSortedLists
 
-24.
+24.交换一个列表相邻的一对元素 SwapNodesinPairs
+
+25.指定反转节点数K ReverseNodesinkGroup
+
+26.
