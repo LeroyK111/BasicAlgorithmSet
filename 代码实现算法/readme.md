@@ -79,4 +79,10 @@
 
 25.指定反转节点数K ReverseNodesinkGroup
 
-26.
+26.删除排序数组中的重复元素,用_代替 RemoveDuplicatesfromSortedArray
+
+27.删除排序数组的指定元素，用_代替 RemoveElement
+
+28.找到子串 FindtheIndexoftheFirstOccurrenceinaString
+
+29.
