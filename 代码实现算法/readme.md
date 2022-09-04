@@ -85,4 +85,6 @@
 
 28.找到子串 FindtheIndexoftheFirstOccurrenceinaString
 
-29.
+29.整数相除，商取整 DivideTwoIntegers
+
+30.
