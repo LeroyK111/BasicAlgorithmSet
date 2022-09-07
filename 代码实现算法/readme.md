@@ -87,4 +87,6 @@
 
 29.整数相除，商取整 DivideTwoIntegers
 
-30.
+30.所有单词连接的子字符串 SubstringwithConcatenationofAllWords
+
+31.
