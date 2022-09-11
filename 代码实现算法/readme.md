@@ -89,4 +89,10 @@
 
 30.所有单词连接的子字符串 SubstringwithConcatenationofAllWords
 
-31.
+31.下一种排列（这种排序没什么意义） NextPermutation
+
+32.可能存在的括号 LongestValidParentheses
+
+33.找列表中的元素 SearchinRotatedSortedArray
+
+34.
