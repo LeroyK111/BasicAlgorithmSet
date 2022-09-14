@@ -95,4 +95,8 @@
 
 33.找列表中的元素 SearchinRotatedSortedArray
 
-34.
+34.找到列表中首尾字符所在的位置 FindFirstandLastPositionofElementinSortedArray
+
+35.推断应该在的位置 SearchInsertPosition
+
+36.
