@@ -99,4 +99,6 @@
 
 35.推断应该在的位置 SearchInsertPosition
 
-36.
+36.数独验证 ValidSudoku
+
+37.
