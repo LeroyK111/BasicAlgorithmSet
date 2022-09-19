@@ -12,59 +12,63 @@
 # But we don't call it
 
 
+def formatInt(value):
+    if value == ".":
+        return 0
+    else:
+        return int(value)
+
+
+# 校验模块
+def checkData(value: list) -> bool:
+    for i in range(1, 10):
+        if value.count(i) > 1:
+            return False
+    return True
+
+
 def demo(board: list) -> bool:
-    nativeData = range(1, 10)
-    ls = {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-        "6": [],
-        "7": [],
-        "8": [],
-        "9": []
-    }
-    # 先判断行列有没有重复
-    for ele in nativeData:
-        for row in board:
-            if row.count(str(ele)) > 1:
-                return False
 
-            if len(ls["9"]) != 9:
-                for i in range(1, 10):
-                    ls[str(i)].append(row[i - 1])
+    colData = {}
 
-    for kes in ls.keys():
-        for ele in nativeData:
-            if ls[kes].count(str(ele)) > 1:
-                return False
+    for i in range(0, 9):
+        colData.setdefault(str(i), [])
 
-    result = []
-    count = 0
-
-    # 再判断3x3格子有没有重复
+    # 行生成
     for row in board:
-        result.extend([row[0:3], row[3:6], row[6:9]])
-        count += 1
-        if count == 3:
-            for i in range(3):
-                data = []
-                data.extend(result[i])
-                data.extend(result[i + 3])
-                data.extend(result[i + 6])
-                for ele in nativeData:
-                    if data.count(str(ele)) > 1:
-                        return False
-            result = []
-            count = 0
+        rowData = list(map(formatInt, row))
+        # 顺便生成列数据
+        for index, col in enumerate(rowData):
+            colData[str(index)].append(col)
+
+        if not checkData(rowData):
+            return False
+
+    # 列校验
+    for col in colData.values():
+        if not checkData(col):
+            return False
+
+    # 在生成3x3数据
+    for scoperange in [[0, 3], [3, 6], [6, 9]]:
+        one = []
+        two = []
+        three = []
+        for s in range(scoperange[0], scoperange[1]):
+            col = colData[str(s)]
+            one.extend(col[0:3])
+            two.extend(col[3:6])
+            three.extend(col[6:9])
+
+        if not (checkData(one) and checkData(two) and checkData(three)):
+            return False
 
     return True
 
 
 if __name__ == '__main__':
     board = [["5", "2", ".", ".", "7", ".", ".", ".", "."],
-             ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+             ["3", ".", ".", "1", "9", "5", ".", ".", "."],
              [".", "9", "8", ".", ".", ".", ".", "6", "."],
              ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
              ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
@@ -72,5 +76,6 @@ if __name__ == '__main__':
              [".", "6", ".", ".", ".", ".", "2", "8", "."],
              [".", ".", ".", "4", "1", "9", ".", ".", "5"],
              [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
+
     result = demo(board)
     print(result)
