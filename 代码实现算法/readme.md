@@ -103,4 +103,8 @@
 
 37.填写数独(需要开多进程，不然太慢) SudokuSolver
 
-38.
+38.数字拆分成加数的形式。CountandSay
+
+39.用给出元素组合出目标值。CombinationSum
+
+40.
