@@ -120,4 +120,6 @@
 
 41.找到最小的缺失正整数。 FirstMissingPositive
 
-42.
+42.计算凹槽最大的面积 TrappingRainWater
+
+43.
