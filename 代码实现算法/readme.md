@@ -122,4 +122,6 @@
 
 42.计算凹槽最大的面积 TrappingRainWater
 
-43.
+43.字符串转数字，再相乘 MultiplyStrings
+
+44.通配符匹配 WildcardMatching
