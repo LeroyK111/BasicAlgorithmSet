@@ -125,3 +125,17 @@
 43.字符串转数字，再相乘 MultiplyStrings
 
 44.通配符匹配 WildcardMatching
+
+45.跳跃索引 JumpGameII
+
+46.全排列 Permutations
+
+47.全排列进阶 PermutationsII
+
+48.旋转矩阵 RotateImage
+
+49.字母相同字符串分在同一组 GroupAnagrams
+
+50.指数 Pow
+
+51.
