@@ -138,4 +138,10 @@
 
 50.指数 Pow
 
-51.
+51.棋子占位问题 N-Queens
+
+52.棋子占位问题2 N-QueensII
+
+53.子数组最大和 MaximumSubarray
+
+54.
