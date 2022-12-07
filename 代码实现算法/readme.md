@@ -144,4 +144,10 @@
 
 53.子数组最大和 MaximumSubarray
 
-54.
+54.螺旋矩阵 spiral-matrix
+
+55.跳跃游戏 jump-game
+
+56.合并区间 merge-intervals
+
+57.
