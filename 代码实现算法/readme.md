@@ -158,4 +158,6 @@
 
 60.排列序列 permutation-sequence
 
-61.
+61.旋转链表 rotate-list
+
+62.
