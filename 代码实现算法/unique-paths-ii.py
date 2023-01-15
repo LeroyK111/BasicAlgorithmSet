@@ -15,7 +15,6 @@ class Demo(object):
         self.result = 0
         self.stoneIndex = self.findYIndex()
         self.data = []
-        self.start = [2, 2]
 
     def findYIndex(self):
         for i in range(len(self.obstacleGrid)):
@@ -26,6 +25,7 @@ class Demo(object):
     def allPaths(self):
         width = len(self.obstacleGrid[0]) - 1
         height = len(self.obstacleGrid) - 1
+        self.start = [width, height]
         # 最简步数
         leftSteps = width * ["left"]
         upSteps = height * ["up"]
