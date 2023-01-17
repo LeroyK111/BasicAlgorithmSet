@@ -166,4 +166,8 @@
 
 64.最小路径和 minimum-path-sum
 
-65.
+65.有效数字 valid-number
+
+66.加一 plus-one
+
+67.
