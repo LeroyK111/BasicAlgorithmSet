@@ -198,4 +198,6 @@
 
 70.爬楼梯 climbing-stairs
 
-71. 
+71.简化路径 simplify-path
+
+72.
