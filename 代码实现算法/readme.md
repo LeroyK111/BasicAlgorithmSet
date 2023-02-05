@@ -202,4 +202,6 @@
 
 72.编辑距离 edit-distance
 
-73.
+73.矩阵置零 set-matrix-zeroes
+
+74.
