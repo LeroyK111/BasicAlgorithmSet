@@ -204,4 +204,6 @@
 
 73.矩阵置零 set-matrix-zeroes
 
-74.
+74.高效索引 search-a-2d-matrix
+
+75.
