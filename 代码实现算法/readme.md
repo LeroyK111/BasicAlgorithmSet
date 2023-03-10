@@ -239,4 +239,10 @@
 
 80.删除有序数组中的重复项 II remove-duplicates-from-sorted-array-i
 
-81.
+81.搜索旋转排序数组II search-in-rotated-sorted-array-ii
+
+82.删除排序链表中的重复元素II remove-duplicates-from-sorted-list-ii
+
+83.删除排序链表中的重复元素 remove-duplicates-from-sorted-list
+
+84.
