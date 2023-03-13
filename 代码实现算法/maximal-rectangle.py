@@ -14,13 +14,17 @@ class Solution:
             for j in range(n):
                 # 前缀和
                 pre[j] = pre[j] + 1 if matrix[i][j] == "1" else 0
+            # print(pre)
 
             # 单调栈
             stack = [-1]
             for k, num in enumerate(pre):
+                # print(k, num)
                 while stack and pre[stack[-1]] > num:
+                    # print(stack, num, pre[stack[-1]])
                     index = stack.pop()
                     res = max(res, pre[index] * (k - stack[-1] - 1))
+                
                 stack.append(k)
 
         return res
