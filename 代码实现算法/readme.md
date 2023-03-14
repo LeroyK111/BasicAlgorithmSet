@@ -251,4 +251,10 @@
 
 86.分隔链表 partition-list
 
-87.
+87.扰乱字符串 scramble-string
+
+88.合并两个有序数组 merge-sorted-array
+
+89.
+
+90.
