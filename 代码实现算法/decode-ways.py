@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-这个解法有问题，
+这个解法有问题，不够好
 """
 
 class Solution:
