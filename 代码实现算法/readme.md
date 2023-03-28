@@ -712,4 +712,6 @@ function mergeSort(nums, left, right) {
 
 95.不同的二叉索引搜索树 unique-binary-search-trees-ii
 
-96.
+96.不同的二叉搜索树 unique-binary-search-trees
+
+97.
