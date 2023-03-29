@@ -9,7 +9,7 @@
 dp[i]
 dp[0] = 1
 dp[1] = dp[0] * dp[0] + 0 = 1
-dp[2] = 
+dp[2] = dp[1] * 2 + 0 = 2
 dp[3] = dp[2] * 2 + dp[1] = 5
 dp[4] = 
 
@@ -21,11 +21,10 @@ class Solution:
         # n+1个树
         dp = [0 for _ in range(n + 1)]
         dp[0] = 1
-        # 
         for i in range(1, n + 1):
             # i 树
             for j in range(0, i):
-                # 给i树赋值， 
+                # 给i树赋值，
                 dp[i] += dp[j] * dp[i - j - 1]
         return dp[n]
 
