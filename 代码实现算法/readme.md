@@ -716,4 +716,10 @@ function mergeSort(nums, left, right) {
 
 97.交错字符串 interleaving-string
 
-98.
+98.判断是否有效二叉树 validate-binary-search-tree
+
+99.恢复二叉搜索树 recover-binary-search-tree
+
+100.相同的树 same-tree
+
+101.
