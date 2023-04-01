@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8600cc73da3a0cb6",
+            "id": "2fb45a77aba88b4c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,8 +146,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8600cc73da3a0cb6",
+  "active": "14bf13f6d5130d01",
   "lastOpenFiles": [
+    "数据结构.png",
+    "readme.md",
+    "recover-binary-search-tree.py.b2d1daf0b8381b7e437d0f6c8ce137af.tmp",
+    "TreeNode.py.5b717b2c21169b941c930093f1f092fa.tmp",
+    "validate-binary-search-tree.py.5d25ecd0591854cdcbc832819b190b04.tmp",
+    "__pycache__/TreeNode.cpython-311.pyc.2442682030032",
+    "__pycache__/TreeNode.cpython-311.pyc",
+    "__pycache__",
+    "TreeNode.py",
     "Pasted image 20230325204511.png",
     "Pasted image 20230325204258.png",
     "Pasted image 20230325202448.png",
@@ -158,9 +167,6 @@
     "Pasted image 20230325185934.png",
     "Pasted image 20230325185906.png",
     "Pasted image 20230325185850.png",
-    "Pasted image 20230325185814.png",
-    "Pasted image 20230325185736.png",
-    "readme.md",
     "数据结构.canvas"
   ]
 }

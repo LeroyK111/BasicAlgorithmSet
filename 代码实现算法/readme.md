@@ -464,6 +464,573 @@ function mergeSort(nums, left, right) {
 
 ## 算法
 
+### 创建一棵树
+```python
+# 自写一棵树
+
+"""
+
+生成二叉树
+
+"""
+
+  
+  
+
+class Node(object):
+
+    def __init__(self, data):
+
+        self.left = None  # 左节点
+
+        self.right = None  # 右节点
+
+        self.data = data  # 值
+
+  
+
+    def insert(self, data):
+
+        if data is None:
+
+            # 让-999替代none
+
+            data = -999
+
+  
+
+        # 将新值与父节点进行比较
+
+        if self.data:  # 非空
+
+            if data <= self.data:  # !新值较小，放左边，考虑到none值的存在，所以小于等于，不然直接小于就行
+
+                if self.left is None:  # 若空，则新建插入节点
+
+                    # !新建一个对象，传入当前根节点的左节点对象，
+
+                    self.left = Node(data)
+
+                else:  # !否则，递归调用对象的方法，往下查找，
+
+                    self.left.insert(data)
+
+            elif data > self.data:  # 新值较大，放右边
+
+                if self.right is None:  # 若空，则新建插入对象
+
+                    self.right = Node(data)
+
+                else:  # 否则，递归往下查找
+
+                    self.right.insert(data)
+
+        else:
+
+            # 空值则只有起始对象
+
+            self.data = data
+
+  
+
+    def PrintTree(self):
+
+        # 这里使用的还是中序遍历
+
+        if self.left:
+
+            self.left.PrintTree()
+
+        print(self.data)
+
+        if self.right:
+
+            self.right.PrintTree()
+
+  
+
+    def fil(self, data: list):
+
+        return list(map(lambda x: None if x == -999 else x, data))
+
+  
+
+    # 中序遍历
+
+    # Left -> Root -> Right
+
+    def inorderTraversal(self, root):
+
+        res = []
+
+        if root:
+
+            # 先查找左节点
+
+            res = self.inorderTraversal(root.left)
+
+            # 加入根节点
+
+            res.append(root.data)
+
+            # 开始查找右节点
+
+            res = res + self.inorderTraversal(root.right)
+
+        return self.fil(res)
+
+  
+
+    # 先序遍历
+
+    # Root -> Left ->Right
+
+    def PreorderTraversal(self, root):
+
+        res = []
+
+        if root:
+
+            res.append(root.data)
+
+            res = res + self.PreorderTraversal(root.left)
+
+            res = res + self.PreorderTraversal(root.right)
+
+        return self.fil(res)
+
+  
+
+    # 后序遍历
+
+    # Left ->Right -> Root
+
+    def PostorderTraversal(self, root):
+
+        res = []
+
+        if root:
+
+            res = self.PostorderTraversal(root.left)
+
+            res = res + self.PostorderTraversal(root.right)
+
+            res.append(root.data)
+
+        return self.fil(res)
+
+  
+  
+
+if __name__ == "__main__":
+
+    # 创建节点
+
+    root = Node(12)
+
+    # 插入节点
+
+    root.insert(6)
+
+    root.insert(14)
+
+    root.insert(3)
+
+  
+
+    # 打印所有的树
+
+    # root.PrintTree()
+
+  
+
+    # 中序遍历 [3, 6, 12, 14]
+
+    result = root.inorderTraversal(root)
+
+    print(result)
+
+    # 先序遍历 [12, 6, 3, 14]
+
+    result = root.PreorderTraversal(root)
+
+    print(result)
+
+    # 后续遍历 [3, 6, 14, 12]
+
+    result = root.PostorderTraversal(root)
+
+    print(result)
+```
+
+
+#### 可以创建树的三方库
+
+```python
+# 调用anytree创建一棵树.
+pip install anytree
+# 也有其他库
+pip install treelib binarytree
+```
+
+```python
+from anytree import Node, RenderTree
+
+udo = Node("Udo")
+marc = Node("Marc", parent=udo)
+lian = Node("Lian", parent=marc)
+dan = Node("Dan", parent=udo)
+jet = Node("Jet", parent=dan)
+jan = Node("Jan", parent=dan)
+joe = Node("Joe", parent=dan)
+
+print(udo)
+Node('/Udo')
+print(joe)
+Node('/Udo/Dan/Joe')
+
+for pre, fill, node in RenderTree(udo):
+    print("%s%s" % (pre, node.name))
+Udo
+├── Marc
+│   └── Lian
+└── Dan
+    ├── Jet
+    ├── Jan
+    └── Joe
+
+print(dan.children)
+(Node('/Udo/Dan/Jet'), Node('/Udo/Dan/Jan'), Node('/Udo/Dan/Joe'))
+```
+
+### 链表
+```python
+#节点类
+class Node(object):
+    #初始化，需要传入节点的数据
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+    
+    #返回节点的数据
+    def get_data(self):
+        return self.data
+    
+    #更新节点的数据
+    def set_data(self, new_data):
+        self.data = new_data
+        
+    #返回后继节点
+    def get_next(self):
+        return self.next
+    
+    #变更后继节点
+    def set_next(self, new_next):
+        self.next = new_next
+
+
+#链表类
+class Linked_list(object):
+    #初始化，头结点为空
+    def __init__(self):
+        self.head = None
+    
+    #添加节点，添加的新节点作为新的头结点
+    def add(self, data):
+        new_node = Node(data)
+        new_node.set_next() = self.head
+        self.head = new_node
+        
+    #包含查询，传入值，返回该值在链表中是否存在
+    def search(self, data):
+        checking = self.head #从头结点开始查询
+        while checking != None :
+            if checking.get_data() == data: #查找到，返回True
+                return True
+            checking = checking.get_next() #查询下一个节点
+        return False #遍历到最后也未能找到，返回False
+        
+    #删除节点，将第一个具有传入值的节点从链表中删除
+    def remove(self, data):
+        checking = self.head #从头结点开始查询
+        previous = None #记录前一个节点，头结点的前一个节点为None
+        
+        while checking != None :
+            if checking.get_data() == data: #查找到，跳出查找循环
+                break
+            previous = checking # 更新前一个节点
+            checking = checking.get_next() #查询下一个节点
+            
+        if previous == None：#如果头结点便是查找的节点
+            self.head = checking.get_next()
+        else: # 查找的节点不在头结点，即，存在前驱节点
+            previous.set_next(checking.get_next())
+    
+    #判断链表是否为空
+    def isEmpty(self):
+        return self.head == None
+    
+    #返回链表长度
+    def size(self):
+        count = 0
+        counting = self.head #从头结点开始计数
+        while counting != None :
+            count += 1
+            counting = counting.get_next()
+        return count
+```
+
+### 跳表
+```python
+import random
+MAX_DEPTH = 5
+
+class SkipNode:
+    def __init__(self, height = 0, elem = None):
+        self.elem = elem
+        self.next = [None]*height
+
+    def __repr__(self):
+        return str(self.elem)
+
+class SkipList:
+    def __init__(self):
+        self.head = SkipNode()
+
+    def updateList(self, elem):
+
+        update = [None] * len(self.head.next)
+        x = self.head
+
+        for i in reversed(range(len(self.head.next))):
+            while x.next[i] != None and \
+                    x.next[i].elem < elem:
+                x = x.next[i]
+            update[i] = x
+
+        return update
+
+    def find(self, elem, update=None):
+        if update == None:
+            update = self.updateList(elem)
+        if len(update) > 0:
+            candidate = update[0].next[0]
+            if candidate != None and candidate.elem == elem:
+                return candidate
+        return None
+
+    def insert(self, elem):
+        node = SkipNode(self.randomHeight(), elem)
+        
+        while len(self.head.next) < len(node.next):
+            self.head.next.append(None)
+
+        update = self.updateList(elem)
+        if self.find(elem, update) == None:
+            for i in range(len(node.next)):
+                node.next[i] = update[i].next[i]
+                update[i].next[i] = node
+
+    def randomHeight(self):
+        k = 1
+        while random.randint(0, 1):
+            k = k + 1
+            if k == MAX_DEPTH:
+                break
+        return k
+
+    def remove(self, elem):
+        update = self.updateList(elem)
+        x = self.find(elem, update)
+        if x != None:
+            for i in range(len(x.next)):
+                update[i].next[i] = x.next[i]
+                if self.head.next[i] == None:
+                    self.head.next = self.head.next[:i]
+                    return
+
+    def traversal(self):
+        for i in reversed(range(len(self.head.next))):
+            x = self.head
+            line = []
+            while x.next[i] != None:
+                line.append(str(x.next[i].elem))
+                x = x.next[i]
+            print('line{}: '.format(i+1) + '->'.join(line))
+```
+
+### 图
+```python
+# 表示Graph对象的类
+
+class Graph:
+
+    #构造函数
+
+    def __init__(self, edges, n):
+
+        #为邻接表分配内存
+
+        self.adjList = [[] for _ in range(n)]
+
+        # 向有向Graph添加边
+
+        for (src, dest) in edges:
+
+            # 将邻接表中的节点从 src 分配到 dest
+
+            self.adjList[src].append(dest)
+
+# 打印Graph的邻接表表示的函数
+
+def printGraph(graph):
+
+    for src in range(len(graph.adjList)):
+
+        # 打印当前顶点及其所有相邻顶点
+
+        for dest in graph.adjList[src]:
+
+            print(f'({src} —> {dest}) ', end='')
+
+        print()
+
+if __name__ == '__main__':
+
+    # 输入：有向Graph中的边
+
+    edges = [(0, 1), (1, 2), (2, 0), (2, 1), (3, 2), (4, 5), (5, 4)]
+
+    # 顶点数(标记为 0 到 5)
+
+    n = 6
+
+    # 从给定的边列表构建Graph
+
+    graph = Graph(edges, n)
+
+    #打印Graph的邻接表表示
+
+    printGraph(graph)
+```
+
+### 堆
+
+```python
+class Heap:
+
+    def __init__(self, heap=[]):
+        self.heap = heap
+
+    def heapify(self):
+        for i in range((len(self.heap) + 1) // 2 - 1, -1, -1):
+            self.max_heapify_top(i)
+
+    def max_heapify_top(self, i):
+        """
+        从上到下
+        O(logn)
+        """
+        left = i * 2 + 1
+        right = i * 2 + 2
+        if left < len(self.heap) and self.heap[left] > self.heap[i]:
+            largest = left
+        else:
+            largest = i
+        if right < len(self.heap) and self.heap[right] > self.heap[largest]:
+            largest = right
+        if largest != i:
+            self.heap[largest], self.heap[i] = self.heap[i], self.heap[largest]
+            self.max_heapify_top(largest)
+
+    def max_heapify_button(self, i):
+        """
+        从下到上
+        O(logn)
+        """
+        parent = (i + 1) // 2 - 1
+        if parent >= 0 and self.heap[parent] < self.heap[i]:
+            smallest = parent
+        else:
+            smallest = i
+
+        if smallest != i:
+            self.heap[smallest], self.heap[i] = self.heap[i], self.heap[smallest]
+            self.max_heapify_button(smallest)
+
+    def pop(self):
+        """
+        O(logn)
+        """
+        self.heap[0], self.heap[len(self.heap) - 1] = self.heap[len(self.heap) - 1], self.heap[0]
+        value = self.heap.pop()
+        self.max_heapify_top(0)
+        return value
+
+    def push(self, value):
+        """
+        O(logn)
+        """
+        self.heap.append(value)
+        self.max_heapify_button(len(self.heap) - 1)
+```
+
+### 散列表
+
+```python
+
+class HashTable:
+    def __init__(self, size):
+        self.elem = [None for i in range(size)]  # 使用list数据结构作为哈希表元素保存方法
+        self.count = size  # 最大表长
+
+    def hash(self, key):
+        return key % self.count  # 散列函数采用除留余数法
+
+    def insert_hash(self, key, value):
+        """插入关键字到哈希表内"""
+        address = self.hash(key)  # 求散列地址
+        while self.elem[address]:  # 当前位置已经有数据了，发生冲突。
+            address = (address + 1) % self.count  # 线性探测下一地址是否可用
+        self.elem[address] = value  # 没有冲突则直接保存。
+
+    def search_hash(self, key):
+        """查找关键字，返回布尔值"""
+        star = address = self.hash(key)
+        while self.elem[address] != key:
+            address = (address + 1) % self.count
+            if not self.elem[address] or address == star:  # 说明没找到或者循环到了开始的位置
+                return False
+        return True
+```
+
+
+### 栈与队列
+
+```python
+data = []
+# 栈的实现，先入后出，后入先出
+data.append(4)
+data.pop()
+
+# 队列的实现，先入先出，后入后出
+data.append(4)
+data.pop(0)
+```
+
+
+### 数组
+
+数组创建完毕，我们还需要list的多态，比如 len(), sort()等等
+```python
+a = list()
+a = []
+b = [1, 2, 3]
+```
+
+
+
+
 数据结构研究的内容：就是如何按一定的逻辑结构，把数据组织起来，并选择适当的存储表示方法把逻辑结构组织好的数据存储到计算机的存储器里。算法研究的目的是为了更有效的处理数据，提高数据运算效率。数据的运算是定义在数据的逻辑结构上，但运算的具体实现要在存储结构上进行。一般有以下几种常用运算：
 
 -   检索：检索就是在数据结构里查找满足一定条件的节点。一般是给定一个某字段的值，找具有该字段值的节点。
@@ -722,4 +1289,6 @@ function mergeSort(nums, left, right) {
 
 100.相同的树 same-tree
 
-101.
+101.对称二叉树 symmetric-tree
+
+102
