@@ -1,4 +1,4 @@
-# 常见python解法
+# 常见leetCode python解法
 
 ## 数据结构
 
