@@ -7,8 +7,10 @@ def insertionSort(arr):
     for i in range(len(arr)):
         # 默认索引
         preIndex = i - 1
+        print(preIndex)
         # 选择值
         current = arr[i]
+        print(current)
         while preIndex >= 0 and arr[preIndex] > current:
             # 排除-1的可能，并且前一个数比后一个数大
             arr[preIndex + 1] = arr[preIndex]  # 把前一个数赋值给后一个数
@@ -41,5 +43,5 @@ arr[-1 + 1] = 2 将我们最外层选择的值，赋予给前一个索引。
 """
 
 if __name__ == '__main__':
-    arr = insertionSort(arr=[3, 2, 1])
+    arr = insertionSort(arr=[3, 2])
     print(arr)
