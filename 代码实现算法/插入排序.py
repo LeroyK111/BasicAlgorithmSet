@@ -41,5 +41,5 @@ arr[-1 + 1] = 2 将我们最外层选择的值，赋予给前一个索引。
 """
 
 if __name__ == '__main__':
-    arr = insertionSort(arr=[3, 2])
+    arr = insertionSort(arr=[3, 2, 1])
     print(arr)
