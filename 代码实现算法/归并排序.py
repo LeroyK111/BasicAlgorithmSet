@@ -16,6 +16,7 @@ def mergeSort(arr):
     middle = math.floor(len(arr) / 2)
     # 列表切割
     left, right = arr[0:middle], arr[middle:]
+    print("left:", left, "right:", right)
     # 调用下一个方法
     return merge(mergeSort(left), mergeSort(right))
 
@@ -24,6 +25,7 @@ def merge(left, right):
     result = []
     # 当两组列表都存在时
     while left and right:
+        print(result)
         # 各自判断个列表首个元素的大小
         if left[0] <= right[0]:
             # left弹出这个元素，
